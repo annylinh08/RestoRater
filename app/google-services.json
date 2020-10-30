@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "933428910593",
+    "firebase_url": "https://restorater-5dc61.firebaseio.com",
+    "project_id": "restorater-5dc61",
+    "storage_bucket": "restorater-5dc61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933428910593:android:91f9c33595c47cb692fe00",
+        "android_client_info": {
+          "package_name": "com.example.restorater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933428910593-v34s8qt8gk9vghr2ka9ho5i8bm24smli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjPgFkNoaC9XzMPjfUCmENJ_yiUmQJuJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933428910593-v34s8qt8gk9vghr2ka9ho5i8bm24smli.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

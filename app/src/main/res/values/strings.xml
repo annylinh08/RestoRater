@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">RestoRater</string>
+    <string name="add_restaurant">Add a New Restaurant</string>
+    <string name="save">Save</string>
+    <string-array name="ratings">
+        <item>Choose Rating</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string name="title_activity_list">ListActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="list_heading">Our Restaurant</string>
+</resources>
