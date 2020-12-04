@@ -3,9 +3,7 @@ package com.example.restorater
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
@@ -17,6 +15,7 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_list.*
 import kotlinx.android.synthetic.main.item_restaurant.view.*
+import kotlinx.android.synthetic.main.toolbar_main.*
 
 class ListActivity : AppCompatActivity() {
 
@@ -39,11 +38,7 @@ class ListActivity : AppCompatActivity() {
         adapter = RestaurantAdapter(options)
         restaurantsRecyclerView.adapter = adapter
 
-        addFab.setOnClickListener {
-            // navigate to Main Activity to add a Restaurant
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-        }
+
         logoutFab.setOnClickListener{
             //sign user out
             FirebaseAuth.getInstance().signOut()
@@ -52,6 +47,32 @@ class ListActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, SignInActivity::class.java)
             startActivity(intent)
         }
+        //instantiate tooolbar
+        setSupportActionBar((topToolbar))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?) : Boolean {
+        //inflate the main menuy to add the items to the Toolbar
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //navigate based on which menu item was clicked
+        when (item.itemId) {
+            R.id.action_add -> {
+                startActivity(Intent(applicationContext, MainActivity::class.java))
+                return true
+            }
+            R.id.action_list -> {
+                return true
+            }
+            R.id.action_profile -> {
+                startActivity(Intent(applicationContext, ProfileActivity::class.java))
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     // tell adapter to start watching data for changes

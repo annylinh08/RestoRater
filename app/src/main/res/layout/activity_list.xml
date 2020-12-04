@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ListActivity">
 
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainToolBar"/>
+
     <TextView
         android:id="@+id/headingTextView"
         android:layout_width="wrap_content"
@@ -13,7 +19,7 @@
         android:text="@string/list_heading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainToolBar"
         android:textSize="@dimen/heading" />
 
     <androidx.recyclerview.widget.RecyclerView

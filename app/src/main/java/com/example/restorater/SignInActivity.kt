@@ -20,16 +20,18 @@ class SignInActivity : AppCompatActivity() {
         // FirebaseUI signin code from https://firebase.google.com/docs/auth/android/firebaseui?authuser=0#kotlin+ktx
         // Choose authentication providers
         val providers = arrayListOf(
-            AuthUI.IdpConfig.EmailBuilder().build(),
-            AuthUI.IdpConfig.GoogleBuilder().build())
+                AuthUI.IdpConfig.EmailBuilder().build(),
+                AuthUI.IdpConfig.GoogleBuilder().build())
 
         // Create and launch sign-in intent
         startActivityForResult(
-            AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .build(),
-            RC_SIGN_IN)
+                AuthUI.getInstance()
+                        .createSignInIntentBuilder()
+                        .setIsSmartLockEnabled(false)
+                        .setAvailableProviders(providers)
+                        .setTheme(R.style.Theme_RestoRater)
+                        .build(),
+                RC_SIGN_IN)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -42,7 +44,8 @@ class SignInActivity : AppCompatActivity() {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
                 // send to list activity
-                val intent = Intent(applicationContext, ListActivity::class.java)
+                //val intent = Intent(applicationContext, ListActivity::class.java)
+                val intent = Intent(applicationContext, ProfileActivity::class.java)
                 startActivity(intent)
             } else {
                 // Sign in failed. If response is null the user canceled the
